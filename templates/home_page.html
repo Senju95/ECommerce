@@ -7,19 +7,17 @@
 
 {% block content %}
   <div class = 'text-center'>
-      <h1> {{ title}}</h1>
-      <h1>Hello, world!</h1>
+    <h1> {{ title}}</h1>
+    <h1>Hello, world!</h1>
+  </div>
+  <img src="{% static 'img/IMG_20161211_131226.jpg'%}" class = "img-fluid" />
+  {% if request.user.is_authenticated %}
+  <div class = 'row'>
+    <div class = 'col'>
+      <h1>Premium</h1>
+      {{ premium_content}}
     </div>
-    <div class = 'container'>
-      <img src="{% static 'img/IMG_20161211_131226.jpg'%}" class = "img-fluid" />
-      {% if request.user.is_authenticated %}
-      <div class = 'row'>
-        <div class = 'col'>
-          <h1>Premium</h1>
-          {{ premium_content}}
-        </div>
-      </div>
-      {% endif %}
-    </div>
+  </div>
+  {% endif %}
 {% endblock content %}
 
