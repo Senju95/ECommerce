@@ -1,7 +1,9 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import Http404
-#from django.views import ListView
 from django.views.generic import ListView, DetailView
+
+from carts.models import Cart
+
 from .models import Product
 
 class ProductFeaturedListView(ListView):
@@ -32,7 +34,6 @@ class ProductListView(ListView):
         return Product.objects.all()
 
 def product_list_view(request):
-    print('puta')
     return render(request, "products/list.html",
         {"object_list": Product.objects.all()}
     )
@@ -82,6 +83,14 @@ def product_detail_view(request, pk=None, *args, **kwargs):
 class ProductDetailSlugView(DetailView):
     queryset = Product.objects.all()
     template_name = "products/detail.html"
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(ProductDetailSlugView, self).get_context_data(*args,**kwargs)
+        request = self.request
+        cart_obj, new_obj = Cart.objects.new_or_get(request)
+        context["cart"] = cart_obj
+        return context
+    
 
     def get_object(self, *args, **kwargs):
         request = self.request

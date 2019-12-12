@@ -1,7 +1,7 @@
 import random
 import os
 from django.db import models
-from django.db.models.signals import pre_save
+from django.db.models.signals import pre_save, post_save
 from django.urls import reverse
 from django.db.models import Q
 
