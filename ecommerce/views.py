@@ -1,4 +1,5 @@
 from django.shortcuts import render,redirect
+from django.http import HttpResponse, JsonResponse
 from django.contrib.auth import authenticate, login, get_user_model
 
 from .forms import ContactForm
@@ -25,11 +26,12 @@ def contact_page(request):
     }
 
     if contact_form.is_valid():
-        print (request.POST.get("fullname"))
-        print (request.POST.get("email"))
-        print (request.POST.get("content"))
-    #if request.method == "POST":
-     #   print (request.POST.get("fullname"))
-      #  print (request.POST.get("email"))
-       # print (request.POST.get("content"))
+        if request.is_ajax():
+            return JsonResponse({"message": "Thank you"})
+
+    if contact_form.errors:
+        errors = contact_form.errors.as_json()
+        if request.is_ajax():
+            return HttpResponse(errors, status=400, content_type='application/json')
+
     return render(request, "contact/view.html", context)

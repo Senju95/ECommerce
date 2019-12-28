@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 
+
 class ContactForm(forms.Form):
     fullname = forms.CharField(
                     widget=forms.TextInput(
@@ -26,8 +27,11 @@ class ContactForm(forms.Form):
                         )
                     )
     
-    def clean_email(self):
-        email = self.cleaned_data.get("email")
-        if not "gmail.com" in email:
-            raise forms.ValidationError("Email has to be gmail.com")
-        return email
+    #def clean_email(self):
+    #    email = self.cleaned_data.get("email")
+    #    if not "gmail.com" in email:
+    #       raise forms.ValidationError("Email has to be gmail.com")
+    #    return email
+
+    #def clean_content(self):
+    #    raise forms.ValidationError("Content is wrong.")
