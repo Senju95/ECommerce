@@ -1,0 +1,58 @@
+[
+{
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+        "title": "Perro",
+        "slug": "Eros",
+        "description": "Pastor aleman",
+        "price": "155.22",
+        "image": "products/30199777/30199777.jpeg",
+        "featured": false,
+        "active": true,
+        "timestamp": "2019-08-07T22:49:42.787Z"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+        "title": "Gato",
+        "slug": "fodo",
+        "description": "Pulgoso",
+        "price": "25.00",
+        "image": "products/27879634/27879634.jpg",
+        "featured": true,
+        "active": true,
+        "timestamp": "2019-08-07T22:49:42.787Z"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+        "title": "Casa",
+        "slug": "casa",
+        "description": "Bonita",
+        "price": "213.00",
+        "image": "products/242468373/242468373.jpg",
+        "featured": true,
+        "active": true,
+        "timestamp": "2019-08-07T22:49:42.787Z"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+        "title": "Lora",
+        "slug": "lora",
+        "description": "is a spread spectrum modulation technique derived from chirp spread spectrum (CSS) technology. Semtech\u2019s LoRa devices and wireless radio frequency technology (LoRa Technology) is a long range, low power wireless platform that has become the de facto technology for Internet of Things (IoT) networks worldwide. LoRa Technology and the open LoRaWAN\u00ae protocol enable smart IoT applications that solve some of the biggest challenges facing our planet: energy management, natural resource reduction, pollution control, infrastructure efficiency, disaster prevention, and more. Semtech\u2019s LoRa Technology has amassed over 600 known uses cases for smart cities, smart homes and buildings, smart agriculture, smart metering, smart supply chain and logistics, and more. With 97 million devices connected to networks in 100 countries and growing, LoRa Technology is the DNA of IoT, creating a Smarter Planet.",
+        "price": "22.00",
+        "image": "",
+        "featured": false,
+        "active": true,
+        "timestamp": "2019-08-07T22:49:42.787Z"
+    }
+}
+]
