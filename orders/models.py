@@ -54,11 +54,11 @@ class Order(models.Model):
         self.save()
         return formatted_total
 
-    def check_done(self):
+    def check_is_ready_to_be_pay(self):
         return self.billing_profile and self.shipping_profile and self.billing_address and self.total > 0
 
     def mark_paid(self):
-        if self.check_done():
+        if self.check_is_ready_to_be_pay():
             self.status = "paid"
             self.save()
             return True

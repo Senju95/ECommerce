@@ -21,7 +21,6 @@ class Address(models.Model):
         return str(self.billing_profile)
 
     def get_address(self):
-        print("puto")
         return "{line1}\n{line2}\n{city}\n{state}, {postal}\n{country}".format(
             line1 = self.address_line_1,
             line2 = self.address_line_2 or "",
